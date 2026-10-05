@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gramo1.app",
+      "sha256_cert_fingerprints": [
+        "2E:DF:D4:29:B5:27:56:1F:97:FD:5D:07:1A:4E:C0:FE:FA:52:5A:F9:29:EA:52:FA:44:36:F8:4B:67:86:B1:F9",
+        "2F:B4:DF:78:20:4B:CA:B9:3F:B4:DF:6F:12:33:EB:E4:4D:82:01:D2:A2:4E:E9:14:43:A8:6E:45:F0:58:FF:CF"
+      ]
+    }
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "98L66R7H38.com.gramo1.app",
+        "appIDs": [
+          "98L66R7H38.com.gramo1.app"
+        ],
+        "paths": [
+          "/c",
+          "/c/*"
+        ],
+        "components": [
+          {
+            "/": "/c",
+            "comment": "Cestas compartidas"
+          },
+          {
+            "/": "/c/*",
+            "comment": "Cestas compartidas"
+          }
+        ]
+      }
+    ]
+  }
+}

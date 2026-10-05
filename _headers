@@ -1,0 +1,6 @@
+# Apple exige que el fichero de Universal Links se sirva como JSON, y no
+# tiene extensión.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+/.well-known/assetlinks.json
+  Content-Type: application/json

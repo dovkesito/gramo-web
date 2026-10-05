@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Te han compartido una cesta · Gramo</title>
+<meta name="robots" content="noindex">
+<!-- Lo que enseña WhatsApp al pegar el enlace. Es estático: la página no sabe
+     qué cesta es, eso lo lee la app. -->
+<meta property="og:title" content="Te han compartido una cesta de Gramo">
+<meta property="og:description" content="Ábrela en Gramo para ver sus productos, sus macros y lo que cuesta hoy.">
+<meta property="og:image" content="https://gramo.netlify.app/c/icono.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="icono.png">
+<link rel="stylesheet" href="/estilo.css">
+<style>
+  body { text-align: center; padding-top: 3rem; }
+  .icono { width: 96px; height: 96px; border-radius: 22px; }
+  .botones { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem auto 0; max-width: 20rem; }
+  .btn {
+    display: block; padding: 0.9rem 1rem; border-radius: 12px; text-decoration: none;
+    font-weight: 600; border: 1px solid var(--acento);
+  }
+  .btn.primario { background: var(--acento); color: var(--fondo); }
+  .nota { color: var(--tinta-suave); font-size: 0.95rem; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<img class="icono" src="icono.png" alt="">
+<h1>Te han compartido una cesta</h1>
+<p class="nota" id="estado">Abriendo Gramo…</p>
+
+<div class="botones">
+  <a class="btn primario" id="abrir" href="#">Abrir en Gramo</a>
+  <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.gramo1.app">Descargar en Google Play</a>
+  <a class="btn" id="appstore" href="https://apps.apple.com/app/id6801570409">Descargar en App Store</a>
+</div>
+
+<p class="nota">¿No tienes Gramo? Instálala y vuelve a tocar el enlace que te mandaron.</p>
+
+<script>
+// Página puente de «Compartir cesta». El enlace https es lo que se manda por
+// WhatsApp (un gramo:// ni sale pulsable), y esto lo convierte en:
+//   · Android: un intent que abre la app, o va a Play si no está instalada;
+//   · iOS: un intento de abrir gramo:// y, si la página sigue a la vista, la
+//     App Store;
+//   · ordenador: los botones, sin redirigir.
+// No lleva datos de la cesta: solo pasa el id a la app.
+(function () {
+  var q = new URLSearchParams(location.search);
+  var id = q.get("id");
+  var e = q.get("e");
+  var ruta = null;
+  if (id && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) {
+    ruta = "compartida/" + id;
+  } else if (e && /^[a-z0-9-]{1,80}$/.test(e)) {
+    ruta = "explorar/" + e;
+  }
+
+  var PLAY = document.getElementById("play").href;
+  var STORE = document.getElementById("appstore").href;
+  var ua = navigator.userAgent || "";
+  var android = /Android/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && "ontouchend" in document);
+  var estado = document.getElementById("estado");
+  var abrir = document.getElementById("abrir");
+
+  if (!ruta) {
+    estado.textContent = "Este enlace no es válido. Pídele a quien te lo mandó que lo vuelva a compartir.";
+    abrir.hidden = true;
+    return;
+  }
+
+  var esquema = "gramo://" + ruta;
+  var destino = android
+    ? "intent://" + ruta + "#Intent;scheme=gramo;package=com.gramo1.app;S.browser_fallback_url=" +
+      encodeURIComponent(PLAY) + ";end"
+    : esquema;
+  abrir.href = destino;
+
+  // Cada móvil ve solo su tienda.
+  if (android) document.getElementById("appstore").hidden = true;
+  if (ios) document.getElementById("play").hidden = true;
+
+  if (!android && !ios) {
+    estado.textContent = "Ábrelo desde el móvil para verla en la app.";
+    return;
+  }
+
+  location.href = destino;
+
+  if (ios) {
+    // Si la app se ha abierto, la página pasa a segundo plano y esto no hace
+    // nada. Si sigue a la vista, es que no está instalada.
+    setTimeout(function () {
+      if (document.visibilityState === "visible") location.href = STORE;
+    }, 1500);
+  }
+  setTimeout(function () {
+    estado.textContent = "Si no se ha abierto, toca «Abrir en Gramo».";
+  }, 2000);
+})();
+</script>
+</body>
+</html>
