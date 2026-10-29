@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legal · Gramo</title>
+<link rel="icon" href="/c/icono.png">
+<link rel="stylesheet" href="/web/fuentes/fuentes.css">
+<link rel="stylesheet" href="/web/estilo-web.css">
+<style>
+.tarjetas { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 0 0 4rem; }
+@media (min-width: 720px) { .tarjetas { grid-template-columns: repeat(2, 1fr); } }
+.tarjeta { display: block; background: var(--crema); color: var(--tinta); border-radius: 16px; padding: 1.4rem; text-decoration: none; transition: transform .15s ease; }
+.tarjeta:hover { transform: translateY(-2px); }
+.tarjeta h2 { margin: 0 0 .4rem; color: var(--verde); font-family: var(--titulo); font-size: 1.25rem; }
+.tarjeta p { margin: 0; color: var(--tinta-2); font-size: .95rem; }
+</style>
+<script src="/web/i18n.js"></script>
+<script src="/web/marco.js" defer></script>
+</head>
+<body data-titulo-es="Legal · Gramo" data-titulo-en="Legal · Gramo">
+<header id="cab"></header>
+<main class="envoltura">
+  <section class="cabecera-pag" data-idioma="es">
+    <h1>Legal</h1>
+    <p>Los documentos legales de Gramo: qué datos tratamos, en qué condiciones usas la app, cómo borrar tu cuenta y de dónde salen los cálculos.</p>
+  </section>
+  <section class="cabecera-pag" data-idioma="en" hidden>
+    <h1>Legal</h1>
+    <p>Gramo's legal documents: what data we process, the conditions for using the app, how to delete your account and where the calculations come from.</p>
+  </section>
+  <div class="tarjetas" data-idioma="es">
+    <a class="tarjeta" href="/legal/privacidad.html"><h2>Política de privacidad</h2><p>Qué datos recogemos, para qué, quién más los ve y cuánto tiempo los guardamos.</p></a>
+    <a class="tarjeta" href="/legal/terminos.html"><h2>Términos de uso</h2><p>Condiciones de uso, límites de los datos de precios y aviso sobre salud.</p></a>
+    <a class="tarjeta" href="/legal/borrar-cuenta.html"><h2>Borrar mi cuenta</h2><p>Cómo eliminar tu cuenta y todos tus datos.</p></a>
+    <a class="tarjeta" href="/legal/aviso-legal.html"><h2>Aviso legal</h2><p>Quién presta el servicio, con su identificación y datos de contacto.</p></a>
+    <a class="tarjeta" href="/legal/fuentes.html"><h2>Fuentes de los cálculos</h2><p>Las ecuaciones y estudios en los que se basan tus objetivos de calorías y proteína.</p></a>
+  </div>
+  <div class="tarjetas" data-idioma="en" hidden>
+    <a class="tarjeta" href="/legal/privacidad.html"><h2>Privacy Policy</h2><p>What data we collect, why, who else sees it and how long we keep it.</p></a>
+    <a class="tarjeta" href="/legal/terminos.html"><h2>Terms of Use</h2><p>Conditions of use, limits of the price data and health notice.</p></a>
+    <a class="tarjeta" href="/legal/borrar-cuenta.html"><h2>Delete my account</h2><p>How to delete your account and all your data.</p></a>
+    <a class="tarjeta" href="/legal/aviso-legal.html"><h2>Legal notice</h2><p>Who provides the service, with its identification and contact details.</p></a>
+    <a class="tarjeta" href="/legal/fuentes.html"><h2>Sources of the calculations</h2><p>The equations and studies behind your calorie and protein targets.</p></a>
+  </div>
+</main>
+<footer id="pie"></footer>
+</body>
+</html>

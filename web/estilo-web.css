@@ -1,0 +1,150 @@
+/* Web de Gramo (gramo.dev). Verde de marca de fondo, dorado para el texto, y el
+   crema de la app dentro de las demos y los documentos legales.
+   Ojo: /estilo.css es OTRA hoja, la de la página puente /c/. No mezclarlas. */
+
+:root {
+  --verde: #1E4D2B;
+  --verde-hondo: #153a20;
+  --verde-claro: #27613a;
+  --oro: #C9A84C;
+  --oro-claro: #E8D9A8;   /* texto corrido sobre verde: dorado, pero que se lea en párrafos */
+  --oro-oscuro: #96791C;
+  --crema: #F4F1EC;
+  --blanco: #FFFFFF;
+  --tinta: #1A2B1A;
+  --tinta-2: #5A6B5A;
+  --tinta-3: #8FA08F;
+  --borde: rgba(26, 43, 26, 0.1);
+  --ok: #4CAF50;
+  --aviso: #FFC107;
+  --mal: #FF5722;
+  --radio: 14px;
+  --ancho: 72rem;
+  --titulo: "Syne", system-ui, sans-serif;
+  --texto: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--verde);
+  color: var(--oro-claro);
+  font: 400 1rem/1.6 var(--texto);
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--oro); }
+a:hover { color: var(--oro-claro); }
+h1, h2, h3 { font-family: var(--titulo); color: var(--oro); line-height: 1.1; margin: 0 0 0.6em; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 800; }
+h2 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+p { margin: 0 0 1em; }
+:focus-visible { outline: 3px solid var(--oro); outline-offset: 3px; border-radius: 6px; }
+[hidden] { display: none !important; }
+.envoltura { max-width: var(--ancho); margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 720px) { .envoltura { padding: 0 2rem; } }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.85rem 1.4rem; border-radius: 999px; border: 2px solid var(--oro);
+  font: 700 1rem/1 var(--texto); text-decoration: none; cursor: pointer;
+  transition: transform 0.15s, background 0.15s, color 0.15s;
+  background: transparent; color: var(--oro);
+}
+.btn:hover { transform: translateY(-1px); background: rgba(201, 168, 76, 0.12); color: var(--oro); }
+.btn.oro { background: var(--oro); color: var(--verde-hondo); }
+.btn.oro:hover { background: var(--oro-claro); border-color: var(--oro-claro); color: var(--verde-hondo); }
+.btn.peq { padding: 0.55rem 1rem; font-size: 0.92rem; }
+
+/* ---------- Cabecera ---------- */
+.cab {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(30, 77, 43, 0.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+}
+.cab .envoltura { display: flex; align-items: center; gap: 1rem; height: 4rem; }
+.marca { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--oro); font: 800 1.35rem var(--titulo); }
+.marca img { width: 34px; height: 34px; border-radius: 9px; }
+.cab nav { display: flex; gap: 1.4rem; margin-left: auto; }
+.cab nav a { color: var(--oro-claro); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+.cab nav a:hover, .cab nav a[aria-current] { color: var(--oro); }
+.idioma { display: flex; border: 1px solid rgba(201, 168, 76, 0.4); border-radius: 999px; overflow: hidden; }
+.idioma button { background: none; border: 0; color: var(--oro-claro); font: 700 0.8rem var(--texto); padding: 0.35rem 0.6rem; cursor: pointer; }
+.idioma button[aria-pressed="true"] { background: var(--oro); color: var(--verde-hondo); }
+.menu-btn { display: none; background: none; border: 0; color: var(--oro); font-size: 1.6rem; cursor: pointer; margin-left: auto; padding: 0.25rem; }
+@media (max-width: 760px) {
+  .menu-btn { display: block; }
+  .cab nav {
+    display: none; position: absolute; top: 4rem; left: 0; right: 0; margin: 0;
+    flex-direction: column; gap: 0; background: var(--verde-hondo);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+  }
+  .cab nav.abierto { display: flex; }
+  .cab nav a { padding: 0.9rem 1rem; border-top: 1px solid rgba(201, 168, 76, 0.1); }
+  .cab .usar { display: none; }
+}
+
+/* ---------- Pie ---------- */
+.pie { border-top: 1px solid rgba(201, 168, 76, 0.18); margin-top: 5rem; padding: 2.5rem 0 3rem; font-size: 0.92rem; }
+.pie .envoltura { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .pie .envoltura { grid-template-columns: 2fr 1fr 1fr; } }
+.pie h4 { margin: 0 0 0.6rem; color: var(--oro); font: 700 0.85rem var(--texto); text-transform: uppercase; letter-spacing: 0.08em; }
+.pie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.pie a { color: var(--oro-claro); text-decoration: none; }
+.pie a:hover { color: var(--oro); text-decoration: underline; }
+.pie .nota { color: rgba(232, 217, 168, 0.65); }
+
+/* ---------- Aviso «Usar Gramo» ---------- */
+.dialogo { border: 0; padding: 0; border-radius: 20px; max-width: min(26rem, calc(100vw - 2rem)); background: var(--crema); color: var(--tinta); }
+.dialogo::backdrop { background: rgba(10, 25, 14, 0.7); backdrop-filter: blur(3px); }
+.dialogo .dentro { padding: 2rem 1.5rem 1.5rem; text-align: center; }
+.dialogo h3 { color: var(--verde); font-size: 1.5rem; }
+.dialogo p { color: var(--tinta-2); }
+.dialogo .tiendas { display: grid; gap: 0.6rem; margin: 1.2rem 0 0.8rem; }
+.dialogo .cerrar { background: none; border: 0; color: var(--tinta-2); font: 600 0.95rem var(--texto); cursor: pointer; padding: 0.5rem; }
+.dialogo .btn { border-color: var(--verde); color: var(--verde); }
+.dialogo .btn.oro { background: var(--verde); color: var(--oro); }
+
+/* ---------- Botones de tienda ---------- */
+.tienda {
+  display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1.2rem;
+  border-radius: 14px; background: var(--verde-hondo); color: var(--oro); text-decoration: none;
+  border: 1px solid rgba(201, 168, 76, 0.45); text-align: left; transition: transform 0.15s, border-color 0.15s;
+}
+.tienda:hover { transform: translateY(-2px); border-color: var(--oro); color: var(--oro); }
+.tienda svg { width: 28px; height: 28px; flex: none; fill: currentColor; }
+.tienda small { display: block; font-size: 0.72rem; opacity: 0.8; line-height: 1.2; }
+.tienda strong { display: block; font: 700 1.1rem/1.2 var(--texto); }
+
+/* ---------- Documentos (legal) ---------- */
+.doc {
+  background: var(--crema); color: var(--tinta); border-radius: 20px;
+  padding: 2rem 1.25rem; margin: 2rem auto 0; max-width: 48rem; line-height: 1.65;
+}
+@media (min-width: 720px) { .doc { padding: 3rem 3.5rem; } }
+.doc h1 { color: var(--verde); font-size: clamp(1.9rem, 5vw, 2.6rem); }
+.doc h2 { color: var(--verde); font-size: 1.4rem; margin-top: 2.2rem; }
+.doc h3 { color: var(--verde-claro); font-size: 1.1rem; margin-top: 1.5rem; }
+.doc a { color: var(--oro-oscuro); font-weight: 600; }
+.doc .fecha { color: var(--tinta-2); font-size: 0.92rem; }
+.doc .caja { background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; padding: 1rem 1.2rem; margin: 1rem 0 1.2rem; }
+.doc .caja p:last-child { margin-bottom: 0; }
+.doc table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; display: block; overflow-x: auto; }
+.doc th, .doc td { border: 1px solid var(--borde); padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; }
+.doc th { background: var(--blanco); color: var(--verde); }
+.doc ul, .doc ol { padding-left: 1.3rem; }
+.doc li { margin: 0.3rem 0; }
+.doc .traduccion { background: #FAF3E0; border: 1px solid var(--oro); border-radius: 12px; padding: 0.8rem 1rem; font-size: 0.92rem; color: var(--tinta-2); }
+
+/* ---------- Utilidades de página ---------- */
+.migas { margin-top: 2rem; font-size: 0.9rem; }
+.migas a { color: var(--oro-claro); }
+.cabecera-pag { padding: 4rem 0 1rem; text-align: center; }
+.cabecera-pag p { max-width: 36rem; margin: 0 auto; font-size: 1.1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

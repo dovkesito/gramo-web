@@ -1,0 +1,219 @@
+/* Portada de gramo.dev: hero, las tres demos y la llamada final. */
+
+.etiqueta { display: inline-block; color: var(--oro); font: 700 0.8rem var(--texto); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+.centro { text-align: center; display: block; }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; padding: 4rem 0 5rem; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: -20% -10% auto auto; width: 60rem; height: 60rem; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.16), transparent 60%); pointer-events: none;
+}
+.hero-rejilla { position: relative; display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 900px) { .hero-rejilla { grid-template-columns: 1.15fr 0.85fr; } .hero { padding: 6rem 0 7rem; } }
+.hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); font-weight: 700; }
+.hero h1 em { font-style: normal; color: var(--oro-claro); background: linear-gradient(transparent 65%, rgba(201, 168, 76, 0.35) 65%); }
+.hero-sub { font-size: 1.15rem; max-width: 34rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 2rem 0; }
+.supers { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.supers li {
+  font-size: 0.82rem; font-weight: 700; padding: 0.3rem 0.75rem 0.3rem 0.6rem; border-radius: 999px;
+  border: 1px solid rgba(201, 168, 76, 0.3); display: flex; align-items: center; gap: 0.4rem;
+}
+.supers li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+
+.hero-visual { position: relative; min-height: 22rem; display: grid; place-items: center; }
+.hero-icono { width: 180px; height: 180px; border-radius: 42px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); animation: flotar 6s ease-in-out infinite; }
+.tarjeta-flotante {
+  position: absolute; background: var(--crema); color: var(--tinta); border-radius: 18px; padding: 1rem 1.2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); display: grid; gap: 0.25rem; min-width: 12rem;
+  animation: flotar 7s ease-in-out infinite; z-index: 1;
+}
+.tarjeta-flotante.t1 { top: 0; left: 0; }
+.tarjeta-flotante.t2 { bottom: 0; right: 0; animation-delay: -3s; }
+.tf-titulo { font-size: 0.8rem; color: var(--tinta-2); font-weight: 600; }
+.tf-precio { font: 800 1.8rem var(--texto); letter-spacing: -0.02em; color: var(--verde); }
+.tf-precio.oro { color: var(--oro-oscuro); }
+.tf-barra { height: 8px; border-radius: 8px; background: rgba(26, 43, 26, 0.08); overflow: hidden; }
+.tf-barra i { display: block; height: 100%; background: var(--ok); border-radius: 8px; }
+.tf-pie { font-size: 0.78rem; color: var(--tinta-2); }
+@keyframes flotar { 50% { transform: translateY(-10px); } }
+/* En móvil no caben flotando: el icono se va y las dos tarjetas van en fila. */
+@media (max-width: 600px) {
+  .hero-visual { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .hero-icono { display: none; }
+  .tarjeta-flotante { position: static; min-width: 0; padding: 0.8rem 0.9rem; animation: none; }
+  .tf-precio { font-size: 1.4rem; }
+}
+
+/* ---------- Funciones ---------- */
+.funciones { padding: 3rem 0; }
+.intro { max-width: 38rem; margin: 0 auto 3rem; font-size: 1.1rem; }
+.funcion { display: grid; gap: 2rem; align-items: center; margin: 0 0 5rem; }
+@media (min-width: 960px) {
+  .funcion { grid-template-columns: 0.8fr 1.2fr; gap: 4rem; margin-bottom: 7rem; }
+  .funcion.invertida .funcion-texto { order: 2; }
+}
+.num { font: 800 1rem var(--titulo); color: var(--oro); opacity: 0.6; display: block; margin-bottom: 0.4rem; }
+.funcion h3 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+.funcion-texto p { font-size: 1.08rem; }
+.ventajas { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.55rem; }
+.ventajas li { padding-left: 1.7rem; position: relative; }
+.ventajas li::before { content: "✓"; position: absolute; left: 0; color: var(--verde-hondo); background: var(--oro); width: 1.15rem; height: 1.15rem; border-radius: 50%; font-size: 0.75rem; font-weight: 800; display: grid; place-items: center; top: 0.2rem; }
+.nota-datos { font-size: 0.85rem; opacity: 0.7; max-width: 40rem; margin: -2rem auto 0; }
+
+/* ---------- Ventana de demo (el crema de la app) ---------- */
+.demo {
+  background: var(--crema); color: var(--tinta); border-radius: 22px; overflow: hidden; min-width: 0;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(201, 168, 76, 0.25);
+}
+.demo-barra { display: flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1rem; background: var(--blanco); border-bottom: 1px solid var(--borde); }
+.demo-barra i { width: 10px; height: 10px; border-radius: 50%; background: rgba(26, 43, 26, 0.15); }
+.demo-barra span { margin-left: 0.6rem; font-weight: 700; font-size: 0.85rem; color: var(--tinta-2); }
+.demo-cuerpo { padding: 1rem; }
+@media (min-width: 560px) { .demo-cuerpo { padding: 1.4rem; } }
+
+/* Demo 1 */
+#demo-cesta .demo-cuerpo { display: grid; gap: 1.2rem; }
+@media (min-width: 640px) { #demo-cesta .demo-cuerpo { grid-template-columns: 0.85fr 1.15fr; } }
+.controles { display: grid; gap: 1rem; align-content: start; }
+.controles label { display: grid; gap: 0.35rem; font-size: 0.88rem; }
+.controles label > span { display: flex; justify-content: space-between; gap: 0.5rem; }
+.controles output { font-weight: 800; color: var(--verde); }
+input[type="range"] { width: 100%; accent-color: var(--verde); height: 1.6rem; cursor: pointer; }
+.interruptores { display: grid; gap: 0.6rem; }
+.segmentado { display: flex; background: rgba(26, 43, 26, 0.07); border-radius: 12px; padding: 3px; }
+.segmentado button { flex: 1; border: 0; background: none; padding: 0.55rem; border-radius: 9px; font: 600 0.88rem var(--texto); color: var(--tinta-2); cursor: pointer; }
+.segmentado button[aria-pressed="true"] { background: var(--blanco); color: var(--verde); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); }
+select { font: 600 0.9rem var(--texto); padding: 0.6rem 0.7rem; border-radius: 12px; border: 1px solid var(--borde); background: var(--blanco); color: var(--tinta); width: 100%; }
+
+.resultado { display: grid; gap: 0.8rem; align-content: start; min-width: 0; }
+.total { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; background: var(--blanco); border-radius: var(--radio); padding: 0.8rem 1rem; border: 1px solid var(--borde); }
+.total span { font-size: 0.85rem; color: var(--tinta-2); font-weight: 600; }
+.total strong { font: 800 1.9rem var(--texto); letter-spacing: -0.02em; color: var(--verde); }
+.total small { color: var(--tinta-2); margin-left: auto; }
+.macros { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 0.9rem; }
+.macro { font-size: 0.76rem; color: var(--tinta-2); }
+.macro div { display: flex; justify-content: space-between; margin-bottom: 0.2rem; }
+.macro b { color: var(--tinta); }
+.macro .barra { height: 7px; border-radius: 7px; background: rgba(26, 43, 26, 0.08); overflow: hidden; }
+.macro .barra i { display: block; height: 100%; border-radius: 7px; transition: width 0.35s, background 0.35s; }
+
+.lineas { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; max-height: 19rem; overflow-y: auto; overscroll-behavior: contain; }
+.linea {
+  display: flex; align-items: center; gap: 0.6rem; background: var(--blanco); border: 1px solid var(--borde);
+  border-radius: 12px; padding: 0.5rem 0.6rem; font-size: 0.86rem; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s;
+}
+.linea:hover { box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07); }
+.linea .ico { font-size: 1.2rem; width: 1.6rem; text-align: center; flex: none; }
+.linea .nombre { flex: 1; min-width: 0; line-height: 1.25; }
+.linea .nombre small { display: block; color: var(--tinta-2); font-size: 0.74rem; }
+.linea .precio { font-weight: 800; color: var(--verde); white-space: nowrap; }
+.linea .x { border: 0; background: none; color: var(--tinta-3); font-size: 1.1rem; cursor: pointer; padding: 0.2rem 0.35rem; border-radius: 8px; line-height: 1; }
+.linea .x:hover { background: rgba(255, 87, 34, 0.1); color: var(--mal); }
+.linea.entra { animation: entra 0.35s ease-out; }
+@keyframes entra { from { opacity: 0; transform: translateY(-6px); } }
+
+.papelera {
+  border: 2px dashed rgba(26, 43, 26, 0.18); border-radius: 12px; padding: 0.7rem; text-align: center;
+  font-size: 0.82rem; color: var(--tinta-2); transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.papelera.encima { background: rgba(255, 87, 34, 0.1); border-color: var(--mal); color: var(--mal); transform: scale(1.02); }
+.quitados { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; font-size: 0.8rem; color: var(--tinta-2); }
+.quitados button { border: 1px solid var(--borde); background: var(--blanco); border-radius: 999px; padding: 0.25rem 0.6rem; font: 600 0.78rem var(--texto); color: var(--tinta); cursor: pointer; }
+.quitados button:hover { border-color: var(--verde); }
+
+/* Fantasma que sigue al dedo al arrastrar */
+.fantasma { position: fixed; z-index: 100; pointer-events: none; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25) !important; transform: rotate(2deg) scale(1.03); opacity: 0.95; }
+.arrastrando { opacity: 0.35; }
+
+/* Demo 2 */
+.resumen-mixta { background: var(--verde); color: var(--oro); border-radius: var(--radio); padding: 0.9rem 1.1rem; margin-bottom: 1rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0.8rem; }
+.resumen-mixta strong { font: 800 1.8rem var(--texto); letter-spacing: -0.02em; }
+.resumen-mixta span { color: var(--oro-claro); font-size: 0.88rem; }
+.resumen-mixta .ahorro { flex-basis: 100%; font-weight: 700; color: var(--oro); }
+.filas-super { display: grid; gap: 0.5rem; }
+.fila-super {
+  background: var(--blanco); border: 1px solid var(--borde); border-left: 5px solid var(--c); border-radius: 12px;
+  padding: 0.55rem 0.7rem; transition: background 0.15s, transform 0.15s;
+}
+.fila-super.encima { background: color-mix(in srgb, var(--c) 10%, white); transform: scale(1.01); }
+.fila-cab { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; }
+.fila-cab b { color: var(--ct); min-width: 5.3rem; }
+.fila-cab .barra { flex: 1; height: 6px; border-radius: 6px; background: rgba(26, 43, 26, 0.07); overflow: hidden; }
+.fila-cab .barra i { display: block; height: 100%; background: var(--c); border-radius: 6px; transition: width 0.35s; }
+.fila-cab .todo { color: var(--tinta-2); font-size: 0.76rem; white-space: nowrap; }
+.fila-cab .suyo { font-weight: 800; color: var(--tinta); min-width: 3.8rem; text-align: right; }
+.fichas { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.45rem; min-height: 1.9rem; }
+.fichas .vacio { font-size: 0.75rem; color: var(--tinta-3); align-self: center; }
+.ficha {
+  display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.76rem; padding: 0.25rem 0.55rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--c) 9%, white); border: 1px solid color-mix(in srgb, var(--c) 30%, white);
+  cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; color: var(--tinta);
+}
+.ficha b { color: var(--ct); }
+.ficha.sust { border-style: dashed; }
+.acciones-mixta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.btn-demo { border: 0; border-radius: 999px; padding: 0.6rem 1rem; background: var(--verde); color: var(--oro); font: 700 0.85rem var(--texto); cursor: pointer; }
+.btn-demo.claro { background: var(--blanco); color: var(--verde); border: 1px solid var(--borde); }
+.btn-demo:hover { filter: brightness(1.08); }
+.pista { font-size: 0.78rem; color: var(--tinta-2); margin: 0.7rem 0 0; }
+
+/* Demo 3 */
+.carrusel {
+  display: flex; gap: 0.8rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.2rem 0.2rem 0.8rem;
+  cursor: grab; scrollbar-width: thin; overscroll-behavior-x: contain;
+}
+.carrusel.cogido { cursor: grabbing; scroll-snap-type: none; }
+.carrusel.cogido * { pointer-events: none; }
+.cesta-tarjeta {
+  flex: 0 0 11.5rem; scroll-snap-align: start; border-radius: 16px; padding: 1rem; border: 2px solid transparent;
+  background: var(--blanco); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); text-align: left; cursor: pointer;
+  font: inherit; color: var(--tinta); display: grid; gap: 0.3rem; transition: transform 0.15s, border-color 0.15s;
+}
+.cesta-tarjeta:hover { transform: translateY(-2px); }
+.cesta-tarjeta[aria-pressed="true"] { border-color: var(--verde); }
+.cesta-tarjeta .emoji { font-size: 1.8rem; }
+.cesta-tarjeta strong { font: 700 1.05rem var(--titulo); color: var(--verde); }
+.cesta-tarjeta small { color: var(--tinta-2); font-size: 0.76rem; line-height: 1.3; }
+.cesta-tarjeta .p { font-weight: 800; font-size: 1.15rem; color: var(--tinta); margin-top: 0.3rem; }
+.cesta-tarjeta .p span { font-size: 0.75rem; font-weight: 600; color: var(--tinta-2); }
+
+.vista { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; padding: 1rem; margin-top: 0.4rem; display: grid; gap: 0.8rem; }
+.vista-cab { display: flex; align-items: center; gap: 0.7rem; }
+.vista-cab .emoji { font-size: 2rem; }
+.vista-cab h4 { margin: 0; font: 700 1.2rem var(--titulo); color: var(--verde); }
+.vista-cab small { color: var(--tinta-2); }
+.vista-cab .p { margin-left: auto; font: 800 1.4rem var(--texto); color: var(--verde); white-space: nowrap; }
+.mini-lista { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.mini-lista span { background: var(--crema); border-radius: 999px; padding: 0.2rem 0.6rem; font-size: 0.78rem; }
+.vista-acciones { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+/* Burbuja de WhatsApp de mentira al compartir */
+.chat { background: #e8dfd3; border-radius: 14px; padding: 0.8rem; display: grid; justify-items: end; animation: entra 0.3s ease-out; }
+.burbuja { background: #d9fdd3; border-radius: 12px 12px 2px 12px; padding: 0.35rem 0.35rem 0.5rem; max-width: 17rem; font-size: 0.82rem; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+.burbuja .previa { display: flex; gap: 0.5rem; background: rgba(0, 0, 0, 0.05); border-radius: 8px; padding: 0.45rem; margin-bottom: 0.4rem; }
+.burbuja .previa img { width: 42px; height: 42px; border-radius: 8px; }
+.burbuja .previa b { display: block; font-size: 0.78rem; }
+.burbuja .previa small { color: #555; font-size: 0.72rem; line-height: 1.25; display: block; }
+.burbuja p { margin: 0 0.3rem; }
+.burbuja a { color: #027eb5; word-break: break-all; font-weight: 400; }
+.burbuja .hora { display: block; text-align: right; color: #667781; font-size: 0.68rem; margin: 0.15rem 0.3rem 0; }
+
+/* ---------- Pasos ---------- */
+.pasos { padding: 3rem 0; }
+.rejilla-pasos { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; gap: 1.2rem; }
+@media (min-width: 760px) { .rejilla-pasos { grid-template-columns: repeat(3, 1fr); } }
+.rejilla-pasos li { border: 1px solid rgba(201, 168, 76, 0.25); border-radius: 20px; padding: 1.6rem; background: rgba(0, 0, 0, 0.08); }
+.rejilla-pasos b { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--oro); color: var(--verde-hondo); font: 800 1.1rem var(--titulo); margin-bottom: 1rem; }
+
+/* ---------- Final ---------- */
+.final { padding: 3rem 0 0; }
+.final-caja {
+  text-align: center; border-radius: 28px; padding: 3rem 1.2rem;
+  background: radial-gradient(circle at 50% 0%, rgba(201, 168, 76, 0.22), transparent 70%), var(--verde-hondo);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+.final-caja p { max-width: 30rem; margin: 0 auto 1.6rem; }
+.final-tiendas { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-bottom: 1.2rem; }

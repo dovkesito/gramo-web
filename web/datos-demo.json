@@ -1,0 +1,705 @@
+{
+ "fecha": "2026-10-29",
+ "productos": [
+  {
+   "id": "pollo",
+   "es": "Pechuga de pollo",
+   "en": "Chicken breast",
+   "racion": 150,
+   "grupo": "prote",
+   "kcal": 110,
+   "prot": 23,
+   "carb": 0,
+   "grasa": 1.8,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 6.66,
+     "nombre": "Pechugas enteras de pollo"
+    },
+    "Carrefour": {
+     "eurKg": 11.32,
+     "nombre": "Pechuga de pollo en pieza Bienstar ElPozo sin gluten y sin lactosa 340 g"
+    },
+    "Dia": {
+     "eurKg": 9.98,
+     "nombre": "Pechuga fileteada de pollo certificado Selección de Dia 600 g aprox."
+    },
+    "Eroski": {
+     "eurKg": 9.6,
+     "nombre": "Pechuga de pollo EROSKI NATUR, al peso, compra mínima 500 g"
+    },
+    "Consum": {
+     "eurKg": 9.98,
+     "nombre": "Pechuga Fileteada Pollo Certificado"
+    },
+    "Aldi": {
+     "eurKg": 6.5,
+     "nombre": "Pechuga entera de pollo"
+    }
+   }
+  },
+  {
+   "id": "huevos",
+   "es": "Huevos L",
+   "en": "Eggs L",
+   "racion": 120,
+   "grupo": "prote",
+   "kcal": 143,
+   "prot": 12.6,
+   "carb": 0.7,
+   "grasa": 9.5,
+   "precios": {
+    "Carrefour": {
+     "eurKg": 5.53,
+     "nombre": "Huevos Frescos Carrefour El Mercado 12 ud."
+    },
+    "Dia": {
+     "eurKg": 5.19,
+     "nombre": "Huevos medianos/grandes M/L de gallinas criadas en el suelo Dia 12 unidades"
+    },
+    "Eroski": {
+     "eurKg": 4.57,
+     "nombre": "Huevos frescos M EROSKI, cartón 12 uds"
+    },
+    "Consum": {
+     "eurKg": 4.24,
+     "nombre": "Huevos L Grandes Docena"
+    }
+   }
+  },
+  {
+   "id": "atun",
+   "es": "Atún claro al natural",
+   "en": "Light tuna in water",
+   "racion": 80,
+   "grupo": "prote",
+   "kcal": 100,
+   "prot": 23,
+   "carb": 0,
+   "grasa": 1,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 8.75,
+     "nombre": "Atún claro al natural Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 16.04,
+     "nombre": "Atún claro sin aceite al natural Calvo pack de 3 latas de 56 g."
+    },
+    "Dia": {
+     "eurKg": 17.41,
+     "nombre": "Atún claro al natural alto en proteínas Dia Mari Marinera 2 x 56 g"
+    },
+    "Eroski": {
+     "eurKg": 22.56,
+     "nombre": "Atún claro natural CAMPOS, pack 3x56 g"
+    },
+    "Consum": {
+     "eurKg": 16.52,
+     "nombre": "Atún Claro Natural"
+    },
+    "Aldi": {
+     "eurKg": 10.46,
+     "nombre": "Atún claro al natural XXL"
+    }
+   }
+  },
+  {
+   "id": "skyr",
+   "es": "Yogur tipo skyr",
+   "en": "Skyr yogurt",
+   "racion": 150,
+   "grupo": "prote",
+   "kcal": 62,
+   "prot": 11,
+   "carb": 4,
+   "grasa": 0.2,
+   "precios": {
+    "Carrefour": {
+     "eurKg": 6.72,
+     "nombre": "Leche fermentada desnatada natural Danone Skyr sin gluten pack de 4 unidades de 100 g."
+    },
+    "Dia": {
+     "eurKg": 4.98,
+     "nombre": "Skyr natural alto en proteínas Danone 4 x 100 g"
+    },
+    "Consum": {
+     "eurKg": 6.23,
+     "nombre": "Skyr Natural Pack 4 Unidades"
+    },
+    "Aldi": {
+     "eurKg": 5,
+     "nombre": "Skyr natural proteico"
+    }
+   }
+  },
+  {
+   "id": "queso",
+   "es": "Queso fresco batido 0%",
+   "en": "Quark 0%",
+   "racion": 200,
+   "grupo": "prote",
+   "kcal": 46,
+   "prot": 8,
+   "carb": 3.5,
+   "grasa": 0.2,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 2.2,
+     "nombre": "Queso fresco batido desnatado 0% MG Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 2.2,
+     "nombre": "Queso fresco batido desnatado Carrefour Classic 500 g."
+    },
+    "Dia": {
+     "eurKg": 4.72,
+     "nombre": "Queso fresco batido rico en proteínas Granja Rinya 400 g"
+    },
+    "Consum": {
+     "eurKg": 4.47,
+     "nombre": "Queso Fresco Batido"
+    },
+    "Aldi": {
+     "eurKg": 1.96,
+     "nombre": "Queso fresco batido desnatado 0%"
+    }
+   }
+  },
+  {
+   "id": "lentejas",
+   "es": "Lentejas cocidas",
+   "en": "Cooked lentils",
+   "racion": 200,
+   "grupo": "legumbre",
+   "kcal": 90,
+   "prot": 7.5,
+   "carb": 12,
+   "grasa": 0.5,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 1.58,
+     "nombre": "Lenteja cocida Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 1.58,
+     "nombre": "Lentejas cocidas categoría extra Carrefour 400 g."
+    },
+    "Dia": {
+     "eurKg": 3.28,
+     "nombre": "Lentejas cocidas Luengo 400 g"
+    },
+    "Eroski": {
+     "eurKg": 2.25,
+     "nombre": "Lentejas cocidas EROSKI, frasco 400 g"
+    },
+    "Consum": {
+     "eurKg": 7.56,
+     "nombre": "Lentejas Cocidas"
+    },
+    "Aldi": {
+     "eurKg": 2.13,
+     "nombre": "Lentejas cocidas extra"
+    }
+   }
+  },
+  {
+   "id": "garbanzos",
+   "es": "Garbanzos cocidos",
+   "en": "Cooked chickpeas",
+   "racion": 200,
+   "grupo": "legumbre",
+   "kcal": 120,
+   "prot": 7,
+   "carb": 15,
+   "grasa": 2.5,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 1.58,
+     "nombre": "Garbanzo cocido Pedrosillano Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 1.4,
+     "nombre": "Garbanzos cocidos categoría extra Classic Carrefour 400 g."
+    },
+    "Dia": {
+     "eurKg": 3.57,
+     "nombre": "Garbanzos cocidos Dia Vegecampo 210 g"
+    },
+    "Eroski": {
+     "eurKg": 4.78,
+     "nombre": "Garbanzo pedrosillano cocido natural PEDRO LUIS, frasco 500 g"
+    },
+    "Consum": {
+     "eurKg": 3.57,
+     "nombre": "Garbanzos Cocidos Frasco"
+    },
+    "Aldi": {
+     "eurKg": 1.88,
+     "nombre": "Garbanzos cocidos extra"
+    }
+   }
+  },
+  {
+   "id": "tofu",
+   "es": "Tofu",
+   "en": "Tofu",
+   "racion": 150,
+   "grupo": "prote",
+   "kcal": 120,
+   "prot": 13,
+   "carb": 1.5,
+   "grasa": 7,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 4.38,
+     "nombre": "Tofu firme Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 6.29,
+     "nombre": "Tofu japonés ecológico Carrefour Bio sin gluten y sin lactosa 380 g. "
+    },
+    "Consum": {
+     "eurKg": 8.63,
+     "nombre": "Tofu Bio"
+    },
+    "Aldi": {
+     "eurKg": 6.72,
+     "nombre": "Tofu ecológico"
+    }
+   }
+  },
+  {
+   "id": "salmon",
+   "es": "Salmón",
+   "en": "Salmon",
+   "racion": 125,
+   "grupo": "prote",
+   "kcal": 200,
+   "prot": 20,
+   "carb": 0,
+   "grasa": 13,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 10.95,
+     "nombre": "Salmón abierto en libro sin cabeza y sin espina"
+    },
+    "Carrefour": {
+     "eurKg": 33.17,
+     "nombre": "Lomo de salmón El Mercado pack de 3 unidades de 100 g"
+    },
+    "Dia": {
+     "eurKg": 23.56,
+     "nombre": "Lomos de salmón Dia Selección Mundial 250 g"
+    },
+    "Eroski": {
+     "eurKg": 39.35,
+     "nombre": "Lomos de salmón en aceite de oliva COSTA VASCA, frasco 200 g"
+    },
+    "Consum": {
+     "eurKg": 26.93,
+     "nombre": "Lomos de Salmón Bandeja"
+    },
+    "Aldi": {
+     "eurKg": 25.93,
+     "nombre": "Salmón al natural"
+    }
+   }
+  },
+  {
+   "id": "arroz",
+   "es": "Arroz redondo",
+   "en": "Round rice",
+   "racion": 80,
+   "grupo": "base",
+   "kcal": 350,
+   "prot": 7,
+   "carb": 78,
+   "grasa": 0.8,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 1.6,
+     "nombre": "Arroz redondo J Sendra Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 2.15,
+     "nombre": "Arroz redondo La Cigala 1 kg."
+    },
+    "Dia": {
+     "eurKg": 1.88,
+     "nombre": "Arroz redondo SOS 1 Kg"
+    },
+    "Eroski": {
+     "eurKg": 2.15,
+     "nombre": "Arroz redondo tradicional LA CIGALA, paquete 1 kg"
+    },
+    "Consum": {
+     "eurKg": 1.89,
+     "nombre": "Arroz Redondo Paquete"
+    },
+    "Aldi": {
+     "eurKg": 1.09,
+     "nombre": "Arroz redondo"
+    }
+   }
+  },
+  {
+   "id": "avena",
+   "es": "Copos de avena",
+   "en": "Rolled oats",
+   "racion": 50,
+   "grupo": "base",
+   "kcal": 370,
+   "prot": 13,
+   "carb": 59,
+   "grasa": 7,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 1.63,
+     "nombre": "Copos de avena Brüggen"
+    },
+    "Carrefour": {
+     "eurKg": 5.58,
+     "nombre": "Copos de avena integral Classic Carrefour sin gluten 500 g."
+    },
+    "Dia": {
+     "eurKg": 4.78,
+     "nombre": "Copos de avena 100% integral sin gluten Gran Dia 500 g"
+    },
+    "Eroski": {
+     "eurKg": 2.98,
+     "nombre": "Copos de avena suaves ALEA, bolsa 500 g"
+    },
+    "Consum": {
+     "eurKg": 4.42,
+     "nombre": "Copos Avena Integral sin Gluten"
+    },
+    "Aldi": {
+     "eurKg": 0.99,
+     "nombre": "Copos de avena integral XXL"
+    }
+   }
+  },
+  {
+   "id": "pasta",
+   "es": "Macarrones",
+   "en": "Macaroni",
+   "racion": 80,
+   "grupo": "base",
+   "kcal": 355,
+   "prot": 12,
+   "carb": 72,
+   "grasa": 1.5,
+   "precios": {
+    "Carrefour": {
+     "eurKg": 1.6,
+     "nombre": "Macarrones cocción rápida Carrefour 500 g."
+    },
+    "Dia": {
+     "eurKg": 1.6,
+     "nombre": "Macarrones rayados Dia Al Diante 500 g"
+    },
+    "Eroski": {
+     "eurKg": 1.6,
+     "nombre": "Macarrones EROSKI basic, paquete 500 g"
+    },
+    "Consum": {
+     "eurKg": 1.6,
+     "nombre": "Macarrones Paquete"
+    },
+    "Aldi": {
+     "eurKg": 0.99,
+     "nombre": "Macarrones"
+    }
+   }
+  },
+  {
+   "id": "pan",
+   "es": "Pan integral de molde",
+   "en": "Wholemeal sandwich bread",
+   "racion": 60,
+   "grupo": "base",
+   "kcal": 240,
+   "prot": 10,
+   "carb": 40,
+   "grasa": 3.5,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 1.96,
+     "nombre": "Pan de molde 100% integral Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 4.45,
+     "nombre": "Pan molde integral con 8 cereales y semillas Bimbo Silueta 600 g."
+    },
+    "Dia": {
+     "eurKg": 1.57,
+     "nombre": "Pan de molde trigo integral El Molino de Dia 820 g"
+    },
+    "Eroski": {
+     "eurKg": 1.96,
+     "nombre": "Pan de molde integral con corteza EROSKI, paquete 460 g"
+    },
+    "Consum": {
+     "eurKg": 3.73,
+     "nombre": "Pan de Molde Integral"
+    },
+    "Aldi": {
+     "eurKg": 1.37,
+     "nombre": "Pan de molde integral"
+    }
+   }
+  },
+  {
+   "id": "leche",
+   "es": "Leche semidesnatada",
+   "en": "Semi-skimmed milk",
+   "racion": 250,
+   "grupo": "lacteo",
+   "kcal": 46,
+   "prot": 3.2,
+   "carb": 4.7,
+   "grasa": 1.6,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 1.08,
+     "nombre": "Leche semidesnatada sin lactosa Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 1.3,
+     "nombre": "Leche semidesnatada ecológica Carrefour Bio sin lactosa brik 1 l."
+    },
+    "Dia": {
+     "eurKg": 1.2,
+     "nombre": "Leche semidesnatada botella Asturiana 1 L"
+    },
+    "Eroski": {
+     "eurKg": 1.29,
+     "nombre": "Leche semidesnatada uht BIZKAIA ESNEA, brik 1 litro"
+    },
+    "Consum": {
+     "eurKg": 1.15,
+     "nombre": "Leche Semidesnatada Brik"
+    },
+    "Aldi": {
+     "eurKg": 0.84,
+     "nombre": "Leche semidesnatada"
+    }
+   }
+  },
+  {
+   "id": "aceite",
+   "es": "Aceite de oliva virgen extra",
+   "en": "Extra virgin olive oil",
+   "racion": 15,
+   "grupo": "grasa",
+   "kcal": 884,
+   "prot": 0,
+   "carb": 0,
+   "grasa": 100,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 7,
+     "nombre": "Aceite de oliva virgen extra Hacendado Gran Selección"
+    },
+    "Carrefour": {
+     "eurKg": 8.52,
+     "nombre": "Aceite de oliva virgen extra Ybarra 750 ml."
+    },
+    "Dia": {
+     "eurKg": 7.95,
+     "nombre": "Aceite de oliva virgen extra Hojiblanca 1 L"
+    },
+    "Eroski": {
+     "eurKg": 8.99,
+     "nombre": "Aceite de oliva virgen extra BORGES, botella 1 litro"
+    },
+    "Consum": {
+     "eurKg": 7.45,
+     "nombre": "Aceite de Oliva Virgen Extra Hojiblanca"
+    },
+    "Aldi": {
+     "eurKg": 4.45,
+     "nombre": "Aceite de oliva virgen extra"
+    }
+   }
+  },
+  {
+   "id": "platano",
+   "es": "Plátano",
+   "en": "Banana",
+   "racion": 120,
+   "grupo": "fruta",
+   "kcal": 90,
+   "prot": 1.1,
+   "carb": 20,
+   "grasa": 0.3,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 2.89,
+     "nombre": "Plátano macho"
+    },
+    "Carrefour": {
+     "eurKg": 2.9,
+     "nombre": "Plátano de freir a granel 1 Kg aprox"
+    },
+    "Dia": {
+     "eurKg": 2.89,
+     "nombre": "Plátano macho para freír granel 1 Kg aprox."
+    },
+    "Eroski": {
+     "eurKg": 3.79,
+     "nombre": "Plátano de Canarias IGP EROSKI NATUR, al peso, compra mínima 1 kg"
+    },
+    "Consum": {
+     "eurKg": 2.3,
+     "nombre": "Plátano Canario IGP"
+    }
+   }
+  },
+  {
+   "id": "manzana",
+   "es": "Manzana",
+   "en": "Apple",
+   "racion": 150,
+   "grupo": "fruta",
+   "kcal": 52,
+   "prot": 0.3,
+   "carb": 12,
+   "grasa": 0.2,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 2,
+     "nombre": "Manzana Golden"
+    },
+    "Carrefour": {
+     "eurKg": 2.89,
+     "nombre": "Manzana opal 1 kg aprox"
+    },
+    "Dia": {
+     "eurKg": 1.99,
+     "nombre": "Manzana roja granel 800 g aprox."
+    },
+    "Eroski": {
+     "eurKg": 3.49,
+     "nombre": "Manzana COSMIC CRISP, al peso, compra mínima 1 kg"
+    },
+    "Consum": {
+     "eurKg": 2.87,
+     "nombre": "Manzana Golden Marlene Bandeja"
+    }
+   }
+  },
+  {
+   "id": "brocoli",
+   "es": "Brócoli",
+   "en": "Broccoli",
+   "racion": 150,
+   "grupo": "verdura",
+   "kcal": 34,
+   "prot": 2.8,
+   "carb": 4.5,
+   "grasa": 0.4,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 2.29,
+     "nombre": "Brócoli"
+    },
+    "Carrefour": {
+     "eurKg": 4.02,
+     "nombre": "Brócoli  Classic Carrefour sin sal añadida 370 g."
+    },
+    "Dia": {
+     "eurKg": 3.98,
+     "nombre": "Brócoli 500 g"
+    },
+    "Eroski": {
+     "eurKg": 5,
+     "nombre": "Brócoli, pieza al peso aprox. 300 g"
+    },
+    "Consum": {
+     "eurKg": 3,
+     "nombre": "Brócoli Manojo"
+    },
+    "Aldi": {
+     "eurKg": 1.9,
+     "nombre": "Brócoli"
+    }
+   }
+  },
+  {
+   "id": "espinacas",
+   "es": "Espinacas",
+   "en": "Spinach",
+   "racion": 100,
+   "grupo": "verdura",
+   "kcal": 23,
+   "prot": 2.9,
+   "carb": 1.4,
+   "grasa": 0.4,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 4.33,
+     "nombre": "Espinacas cortadas y lavadas"
+    },
+    "Carrefour": {
+     "eurKg": 3.32,
+     "nombre": "Espinacas en hojas Carrefour Extra 600 g."
+    },
+    "Dia": {
+     "eurKg": 4.12,
+     "nombre": "Espinacas Ybarra 425 g"
+    },
+    "Eroski": {
+     "eurKg": 6.57,
+     "nombre": "Espinacas en hojas FINDUS, bolsa 440 g"
+    },
+    "Consum": {
+     "eurKg": 4.95,
+     "nombre": "Espinacas Hoja"
+    },
+    "Aldi": {
+     "eurKg": 4.33,
+     "nombre": "Espinaca en hojas"
+    }
+   }
+  },
+  {
+   "id": "tomate",
+   "es": "Tomate triturado",
+   "en": "Crushed tomato",
+   "racion": 100,
+   "grupo": "verdura",
+   "kcal": 30,
+   "prot": 1.3,
+   "carb": 4.5,
+   "grasa": 0.2,
+   "precios": {
+    "Mercadona": {
+     "eurKg": 1.25,
+     "nombre": "Tomate triturado Hacendado"
+    },
+    "Carrefour": {
+     "eurKg": 2.99,
+     "nombre": "Tomate triturado Cidacos 800 g."
+    },
+    "Dia": {
+     "eurKg": 1.38,
+     "nombre": "Tomate triturado Dia Vegecampo 400 g"
+    },
+    "Eroski": {
+     "eurKg": 3.74,
+     "nombre": "Tomate triturado ORLANDO, lata 800 g"
+    },
+    "Consum": {
+     "eurKg": 1.38,
+     "nombre": "Tomate Triturado Lata"
+    },
+    "Aldi": {
+     "eurKg": 1.13,
+     "nombre": "Tomate triturado extra"
+    }
+   }
+  }
+ ]
+}

@@ -3,25 +3,183 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gramo · Tu cesta más barata</title>
-<meta name="description" content="Gramo compara supermercados para montar la compra más barata que cumple tus macros.">
+<title>Gramo · La compra más barata que cumple tus macros</title>
+<meta name="description" content="Gramo compara Mercadona, Carrefour, Dia, Eroski, Consum y Aldi para montarte la compra más barata que cumple tus calorías y tu proteína.">
+<meta property="og:title" content="Gramo · La compra más barata que cumple tus macros">
+<meta property="og:description" content="Pon tus macros y Gramo te monta la cesta más barata comparando seis supermercados.">
+<meta property="og:image" content="https://gramo.dev/c/icono.png">
+<meta property="og:url" content="https://gramo.dev/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1E4D2B">
 <link rel="icon" href="/c/icono.png">
-<link rel="stylesheet" href="/estilo.css">
-<style>
-  body { text-align: center; padding-top: 3rem; }
-  .icono { width: 96px; height: 96px; border-radius: 22px; }
-  .botones { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem auto 0; max-width: 20rem; }
-  .btn { display: block; padding: 0.9rem 1rem; border-radius: 12px; text-decoration: none; font-weight: 600; border: 1px solid var(--acento); }
-</style>
+<link rel="stylesheet" href="/web/fuentes/fuentes.css">
+<link rel="stylesheet" href="/web/estilo-web.css">
+<link rel="stylesheet" href="/web/portada.css">
+<script src="/web/i18n.js"></script>
+<script src="/web/textos-portada.js"></script>
+<script src="/web/marco.js" defer></script>
+<script src="/web/demos.js" defer></script>
 </head>
-<body>
-<img class="icono" src="/c/icono.png" alt="">
-<h1>Gramo</h1>
-<p>La compra más barata que cumple tus macros, comparando supermercados.</p>
-<div class="botones">
-  <a class="btn" href="https://play.google.com/store/apps/details?id=com.gramo1.app">Descargar en Google Play</a>
-  <a class="btn" href="https://apps.apple.com/app/id6801570409">Descargar en App Store</a>
-</div>
-<p><a href="https://dovkesito.github.io/gramo-legal/privacidad.html">Privacidad</a> · <a href="https://dovkesito.github.io/gramo-legal/terminos.html">Términos</a></p>
+<body data-titulo-es="Gramo · La compra más barata que cumple tus macros" data-titulo-en="Gramo · The cheapest groceries that hit your macros">
+<header id="cab"></header>
+
+<main>
+  <!-- ======== Portada ======== -->
+  <section class="hero">
+    <div class="envoltura hero-rejilla">
+      <div class="hero-texto">
+        <p class="etiqueta" data-t="hero.etiqueta">6 supermercados · gratis para empezar</p>
+        <h1 data-t-html="hero.titulo">La compra más barata que <em>cumple tus macros</em>.</h1>
+        <p class="hero-sub" data-t="hero.sub">Dinos cuánta proteína y cuántas calorías quieres. Gramo mira miles de productos de seis supermercados y te monta la cesta que las cumple por menos dinero.</p>
+        <div class="hero-cta">
+          <button class="btn oro" type="button" data-usar data-t="nav.usar">Usar Gramo</button>
+          <a class="btn" href="/descargar/" data-t="hero.descargar">Descargar la app</a>
+        </div>
+        <ul class="supers" data-t-aria="hero.supers">
+          <li style="--c:#00A65B">Mercadona</li><li style="--c:#004E9F">Carrefour</li><li style="--c:#C8102E">Dia</li>
+          <li style="--c:#0F7B6C">Eroski</li><li style="--c:#E0A100">Consum</li><li style="--c:#FF6600">Aldi</li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="tarjeta-flotante t1">
+          <span class="tf-titulo" data-t="hero.tf1">Tu semana</span>
+          <strong class="tf-precio" id="hero-precio">—</strong>
+          <span class="tf-barra"><i style="width:98%"></i></span>
+          <span class="tf-pie" id="hero-prot"></span>
+        </div>
+        <div class="tarjeta-flotante t2">
+          <span class="tf-titulo" data-t="hero.tf2">Comparados a la vez</span>
+          <strong class="tf-precio oro" data-t="hero.tf2num">6 súpers</strong>
+          <span class="tf-pie" data-t="hero.tf2pie">y miles de productos</span>
+        </div>
+        <img class="hero-icono" src="/c/icono.png" alt="" width="180" height="180">
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Funciones ======== -->
+  <section id="funciones" class="funciones">
+    <div class="envoltura">
+      <p class="etiqueta centro" data-t="func.etiqueta">Pruébalo aquí mismo</p>
+      <h2 class="centro" data-t="func.titulo">Toca, arrastra y juega con Gramo</h2>
+      <p class="centro intro" data-t="func.intro">Estas tres demos funcionan de verdad, con precios reales de ejemplo. La app hace lo mismo con el catálogo entero.</p>
+
+      <!-- Demo 1: cesta por macros -->
+      <article class="funcion">
+        <div class="funcion-texto">
+          <span class="num">01</span>
+          <h3 data-t="d1.titulo">Cesta por macros</h3>
+          <p data-t="d1.texto">Mueve las barras: Gramo busca primero la proteína más barata, completa las calorías y te dice exactamente qué comprar. ¿No te gusta algo? Arrástralo a la papelera y se recalcula.</p>
+          <ul class="ventajas">
+            <li data-t="d1.v1">Proteína de verdad, no galletas «proteicas»</li>
+            <li data-t="d1.v2">Fruta y verdura incluidas</li>
+            <li data-t="d1.v3">Para un día o para la semana entera</li>
+          </ul>
+        </div>
+        <div class="demo" id="demo-cesta">
+          <div class="demo-barra"><i></i><i></i><i></i><span data-t="d1.ventana">Mi cesta</span></div>
+          <div class="demo-cuerpo">
+            <div class="controles">
+              <label><span><b data-t="d1.kcal">Calorías al día</b><output id="v-kcal"></output></span>
+                <input type="range" id="r-kcal" min="1500" max="3500" step="50" value="2400"></label>
+              <label><span><b data-t="d1.prot">Proteína al día</b><output id="v-prot"></output></span>
+                <input type="range" id="r-prot" min="60" max="220" step="5" value="140"></label>
+              <label><span><b data-t="d1.dias">Días</b><output id="v-dias"></output></span>
+                <input type="range" id="r-dias" min="1" max="7" step="1" value="7"></label>
+              <div class="interruptores">
+                <div class="segmentado" role="group" id="g-dieta" data-t-aria="d1.grupo">
+                  <button type="button" data-v="omni" aria-pressed="true" data-t="d1.omni">Omnívora</button>
+                  <button type="button" data-v="veg" aria-pressed="false" data-t="d1.veg">Vegetariana</button>
+                </div>
+                <select id="s-super" data-t-aria="d1.super"></select>
+              </div>
+            </div>
+            <div class="resultado">
+              <div class="total"><span data-t="d1.total">Total</span><strong id="c-total">—</strong><small id="c-pordia"></small></div>
+              <div class="macros" id="c-macros"></div>
+              <ul class="lineas" id="c-lineas"></ul>
+              <div class="papelera" id="c-papelera"><span aria-hidden="true">🗑</span> <span data-t="d1.papelera">Arrastra aquí lo que no quieras</span></div>
+              <div class="quitados" id="c-quitados" hidden></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Demo 2: comparar súpers -->
+      <article class="funcion invertida">
+        <div class="funcion-texto">
+          <span class="num">02</span>
+          <h3 data-t="d2.titulo">Compara supermercados</h3>
+          <p data-t="d2.texto">La misma cesta, en seis súpers a la vez. Y si te pillan cerca dos, arrastra cada producto al súper donde sale más barato y mira cuánto ahorras con la compra mixta.</p>
+          <ul class="ventajas">
+            <li data-t="d2.v1">Precio por lo que de verdad comes</li>
+            <li data-t="d2.v2">Sustitutos cuando un súper no lo tiene</li>
+            <li data-t="d2.v3">Precios actualizados con regularidad</li>
+          </ul>
+        </div>
+        <div class="demo" id="demo-comparar">
+          <div class="demo-barra"><i></i><i></i><i></i><span data-t="d2.ventana">Comparar</span></div>
+          <div class="demo-cuerpo">
+            <div class="resumen-mixta" id="m-resumen"></div>
+            <div class="filas-super" id="m-filas"></div>
+            <div class="acciones-mixta">
+              <button class="btn-demo" type="button" id="m-optima" data-t="d2.optima">Mezcla más barata</button>
+              <button class="btn-demo claro" type="button" id="m-una" data-t="d2.una">Todo en el más barato</button>
+            </div>
+            <p class="pista" data-t="d2.pista">Arrastra un producto de un súper a otro.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Demo 3: explorar y compartir -->
+      <article class="funcion">
+        <div class="funcion-texto">
+          <span class="num">03</span>
+          <h3 data-t="d3.titulo">Explora y comparte cestas</h3>
+          <p data-t="d3.texto">¿Sin ganas de pensar? Elige una cesta hecha para tu objetivo: volumen, definición, vegetariana o de estudiante. Y mándasela a quien quieras por WhatsApp con un enlace.</p>
+          <ul class="ventajas">
+            <li data-t="d3.v1">Cestas por público, dieta y súper</li>
+            <li data-t="d3.v2">Se abren en la app de tu amigo, con sus macros</li>
+            <li data-t="d3.v3">Guárdala y úsala como tu plan</li>
+          </ul>
+        </div>
+        <div class="demo" id="demo-explorar">
+          <div class="demo-barra"><i></i><i></i><i></i><span data-t="d3.ventana">Explorar</span></div>
+          <div class="demo-cuerpo">
+            <div class="carrusel" id="e-carrusel" tabindex="0" data-t-aria="d3.carrusel"></div>
+            <div class="vista" id="e-vista"></div>
+          </div>
+        </div>
+      </article>
+      <p class="nota-datos centro" id="nota-datos"></p>
+    </div>
+  </section>
+
+  <!-- ======== Cómo funciona ======== -->
+  <section class="pasos">
+    <div class="envoltura">
+      <h2 class="centro" data-t="pasos.titulo">Tres pasos y a comprar</h2>
+      <ol class="rejilla-pasos">
+        <li><b>1</b><h3 data-t="pasos.1t">Cuéntanos de ti</h3><p data-t="pasos.1">Peso, objetivo y qué súpers te pillan cerca. Gramo calcula tus macros.</p></li>
+        <li><b>2</b><h3 data-t="pasos.2t">Elige tu cesta</h3><p data-t="pasos.2">La más barata, la de más calidad o una de Explorar. Cambia lo que quieras.</p></li>
+        <li><b>3</b><h3 data-t="pasos.3t">Ve al súper</h3><p data-t="pasos.3">Lista de la compra ordenada, con lo que cuesta cada cosa y lo que te aporta.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======== Llamada final ======== -->
+  <section class="final">
+    <div class="envoltura">
+      <div class="final-caja">
+        <h2 data-t="final.titulo">Empieza a ahorrar esta semana</h2>
+        <p data-t="final.texto">Gratis en Android y iPhone, con una suscripción Pro opcional. La versión para el ordenador llega pronto.</p>
+        <div class="final-tiendas" id="final-tiendas"></div>
+        <button class="btn" type="button" data-usar data-t="nav.usar">Usar Gramo</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="pie"></footer>
 </body>
 </html>

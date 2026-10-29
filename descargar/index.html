@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descargar Gramo</title>
+<meta name="description" content="Descarga Gramo en Google Play y en la App Store: gratis, con suscripción Pro opcional.">
+<meta name="theme-color" content="#1E4D2B">
+<link rel="icon" href="/c/icono.png">
+<link rel="stylesheet" href="/web/fuentes/fuentes.css">
+<link rel="stylesheet" href="/web/estilo-web.css">
+<script src="/web/i18n.js"></script>
+<script>
+  window.GRAMO_TEXTOS = {
+    es: {
+      "d.titulo": "Descarga Gramo",
+      "d.sub": "Gratis en Android y iPhone, sin anuncios y sin crear cuenta para probarla. Si quieres más, hay una suscripción Pro opcional.",
+      "d.qr": "¿Estás en el ordenador? Apunta con la cámara del móvil:",
+      "d.qr.play": "Android",
+      "d.qr.apple": "iPhone",
+      "d.req.t": "Qué necesitas",
+      "d.req.movil": "Un móvil Android o un iPhone",
+      "d.req.cuenta": "Cuenta opcional: puedes probarla como invitado",
+      "d.req.espana": "Pensada para España: compara Mercadona, Carrefour, Dia, Eroski, Consum y Aldi",
+      "d.web.t": "¿Y en el ordenador?",
+      "d.web": "Gramo para el navegador está en camino. Cuando esté listo, el botón «Usar Gramo» te llevará a él.",
+    },
+    en: {
+      "d.titulo": "Download Gramo",
+      "d.sub": "Free on Android and iPhone, with no ads and no account needed to try it. Want more? There's an optional Pro subscription.",
+      "d.qr": "On a computer? Point your phone's camera here:",
+      "d.qr.play": "Android",
+      "d.qr.apple": "iPhone",
+      "d.req.t": "What you need",
+      "d.req.movil": "An Android phone or an iPhone",
+      "d.req.cuenta": "Account optional: you can try it as a guest",
+      "d.req.espana": "Built for Spain: compares Mercadona, Carrefour, Dia, Eroski, Consum and Aldi",
+      "d.web.t": "And on desktop?",
+      "d.web": "Gramo for the browser is on its way. When it's ready, the “Use Gramo” button will take you there.",
+    },
+  };
+</script>
+<script src="/web/marco.js" defer></script>
+<style>
+  .descarga { text-align: center; padding: 4rem 0 1rem; }
+  .descarga .icono { width: 120px; height: 120px; border-radius: 28px; margin: 0 auto 2rem; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+  .descarga .sub { font-size: 1.15rem; max-width: 32rem; margin: 0 auto 2rem; }
+  .tiendas-grandes { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .tiendas-grandes .tienda { padding: 0.9rem 1.5rem; }
+  .qr { display: none; margin: 3rem auto 0; max-width: 34rem; }
+  @media (min-width: 900px) and (hover: hover) { .qr { display: block; } }
+  .qr-fila { display: flex; gap: 2rem; justify-content: center; margin-top: 1rem; }
+  .qr figure { margin: 0; }
+  .qr img { width: 150px; height: 150px; background: var(--crema); padding: 10px; border-radius: 16px; }
+  .qr figcaption { margin-top: .5rem; font-weight: 700; color: var(--oro); }
+  .info { display: grid; gap: 1.2rem; max-width: 48rem; margin: 4rem auto 0; }
+  @media (min-width: 720px) { .info { grid-template-columns: 1fr 1fr; } }
+  .info section { background: var(--crema); color: var(--tinta); border-radius: 20px; padding: 1.6rem; }
+  .info h2 { color: var(--verde); font-size: 1.3rem; }
+  .info ul { margin: 0; padding-left: 1.2rem; }
+  .info li { margin: .3rem 0; }
+</style>
+</head>
+<body data-titulo-es="Descargar Gramo" data-titulo-en="Download Gramo">
+<header id="cab"></header>
+<main class="envoltura">
+  <section class="descarga">
+    <img class="icono" src="/c/icono.png" alt="Gramo" width="120" height="120">
+    <h1 data-t="d.titulo">Descarga Gramo</h1>
+    <p class="sub" data-t="d.sub"></p>
+    <div class="tiendas-grandes" id="tiendas"></div>
+    <div class="qr">
+      <p data-t="d.qr"></p>
+      <div class="qr-fila">
+        <!-- QR generados una vez y guardados aquí: la página no llama a nadie de fuera. -->
+        <figure><img src="/web/img/qr-play.png" alt="QR Google Play" loading="lazy"><figcaption data-t="d.qr.play"></figcaption></figure>
+        <figure><img src="/web/img/qr-appstore.png" alt="QR App Store" loading="lazy"><figcaption data-t="d.qr.apple"></figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <div class="info">
+    <section>
+      <h2 data-t="d.req.t"></h2>
+      <ul>
+        <li data-t="d.req.movil"></li>
+        <li data-t="d.req.cuenta"></li>
+        <li data-t="d.req.espana"></li>
+      </ul>
+    </section>
+    <section>
+      <h2 data-t="d.web.t"></h2>
+      <p data-t="d.web"></p>
+      <button class="btn oro peq" type="button" data-usar data-t="nav.usar" style="background:var(--verde);color:var(--oro);border-color:var(--verde)"></button>
+    </section>
+  </div>
+</main>
+<footer id="pie"></footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("tiendas").innerHTML = botonesTienda();
+    aplicarIdioma();
+  });
+</script>
+</body>
+</html>
