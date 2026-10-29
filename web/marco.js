@@ -26,7 +26,7 @@ function pintarMarco() {
     cab.className = "cab";
     cab.innerHTML = `
       <div class="envoltura">
-        <a class="marca" href="/"><img src="/c/icono.png" alt="" width="34" height="34">Gramo</a>
+        <a class="marca" href="/">Gramo</a>
         <button class="menu-btn" type="button" aria-expanded="false" data-t-aria="nav.menu">☰</button>
         <nav id="menu">
           <a href="/#funciones" data-t="nav.funciones"></a>
@@ -54,7 +54,7 @@ function pintarMarco() {
     pie.innerHTML = `
       <div class="envoltura">
         <div>
-          <a class="marca" href="/"><img src="/c/icono.png" alt="" width="34" height="34">Gramo</a>
+          <a class="marca" href="/">Gramo</a>
           <p style="margin-top:.8rem" data-t="pie.lema"></p>
           <p class="nota" data-t="pie.noafiliado"></p>
           <p class="nota">© ${new Date().getFullYear()} Gramo</p>
