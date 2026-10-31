@@ -123,9 +123,9 @@ p { margin: 0 0 1em; }
 /* ---------- Documentos (legal) ---------- */
 .doc {
   background: var(--crema); color: var(--tinta); border-radius: 20px;
-  padding: 2rem 1.25rem; margin: 2rem auto 0; max-width: 48rem; line-height: 1.65;
+  padding: 2rem 1.25rem; margin: 2rem auto 0; max-width: 64rem; line-height: 1.65;
 }
-@media (min-width: 720px) { .doc { padding: 3rem 3.5rem; } }
+@media (min-width: 720px) { .doc { padding: 3rem 4.5rem; } }
 .doc h1 { color: var(--verde); font-size: clamp(1.9rem, 5vw, 2.6rem); }
 .doc h2 { color: var(--verde); font-size: 1.4rem; margin-top: 2.2rem; }
 .doc h3 { color: var(--verde-claro); font-size: 1.1rem; margin-top: 1.5rem; }

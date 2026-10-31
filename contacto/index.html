@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · Gramo</title>
+<meta name="description" content="Escribe a Gramo: dudas, ideas, errores o temas de privacidad.">
+<meta name="theme-color" content="#1E4D2B">
+<link rel="icon" href="/c/icono.png">
+<link rel="stylesheet" href="/web/fuentes/fuentes.css">
+<link rel="stylesheet" href="/web/estilo-web.css">
+<script src="/web/i18n.js"></script>
+<script>
+  window.GRAMO_TEXTOS = {
+    es: {
+      "k.titulo": "Contacto",
+      "k.sub": "¿Una duda, una idea o algo que no funciona? Escríbenos y te contestamos.",
+      "k.correo": "Correo",
+      "k.escribir": "Escribir un correo",
+      "k.copiar": "Copiar",
+      "k.copiado": "Copiado",
+      "k.temas.t": "Para que te contestemos antes",
+      "k.temas.1": "Si algo falla, dinos qué súper y qué pantalla, y si puedes, adjunta una captura.",
+      "k.temas.2": "Si es sobre tus datos o borrar tu cuenta, escribe desde el correo de tu cuenta.",
+      "k.temas.3": "Las ideas para la app también se pueden mandar desde Cuenta → Sugerencias.",
+      "k.legal": "Para privacidad y borrado de cuenta tienes también la página de",
+      "k.legal.enlace": "borrar mi cuenta",
+    },
+    en: {
+      "k.titulo": "Contact",
+      "k.sub": "A question, an idea or something that isn't working? Write to us and we'll get back to you.",
+      "k.correo": "Email",
+      "k.escribir": "Write an email",
+      "k.copiar": "Copy",
+      "k.copiado": "Copied",
+      "k.temas.t": "To get a faster reply",
+      "k.temas.1": "If something breaks, tell us which supermarket and which screen, and attach a screenshot if you can.",
+      "k.temas.2": "If it's about your data or deleting your account, write from your account's email address.",
+      "k.temas.3": "Ideas for the app can also be sent from Account → Suggestions.",
+      "k.legal": "For privacy and account deletion there's also the page to",
+      "k.legal.enlace": "delete my account",
+    },
+  };
+</script>
+<script src="/web/marco.js" defer></script>
+<style>
+  .contacto { max-width: 40rem; margin: 0 auto; }
+  .tarjeta { background: var(--crema); color: var(--tinta); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; margin-top: 1rem; }
+  .tarjeta small { display: block; color: var(--tinta-2); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
+  .correo { display: block; font: 800 clamp(1.3rem, 5vw, 1.9rem)/1.2 var(--texto); color: var(--verde); margin: .5rem 0 1.5rem; word-break: break-all; text-decoration: none; }
+  .acciones { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+  .acciones .btn { border-color: var(--verde); color: var(--verde); }
+  .acciones .btn.oro { background: var(--verde); color: var(--oro); }
+  .temas { margin-top: 2rem; }
+  .temas h2 { font-size: 1.3rem; }
+  .temas ul { padding-left: 1.2rem; }
+  .temas li { margin: .45rem 0; }
+</style>
+</head>
+<body data-titulo-es="Contacto · Gramo" data-titulo-en="Contact · Gramo">
+<header id="cab"></header>
+<main class="envoltura">
+  <section class="cabecera-pag">
+    <h1 data-t="k.titulo">Contacto</h1>
+    <p data-t="k.sub"></p>
+  </section>
+  <div class="contacto">
+    <div class="tarjeta">
+      <small data-t="k.correo">Correo</small>
+      <a class="correo" href="mailto:dviidcf@gmail.com">dviidcf@gmail.com</a>
+      <div class="acciones">
+        <a class="btn oro" href="mailto:dviidcf@gmail.com" data-t="k.escribir">Escribir un correo</a>
+        <button class="btn" type="button" id="copiar" data-t="k.copiar">Copiar</button>
+      </div>
+    </div>
+    <section class="temas">
+      <h2 data-t="k.temas.t"></h2>
+      <ul>
+        <li data-t="k.temas.1"></li>
+        <li data-t="k.temas.2"></li>
+        <li data-t="k.temas.3"></li>
+      </ul>
+      <p><span data-t="k.legal"></span> <a href="/legal/borrar-cuenta.html" data-t="k.legal.enlace"></a>.</p>
+    </section>
+  </div>
+</main>
+<footer id="pie"></footer>
+<script>
+  // Copiar al portapapeles; si el navegador no deja, el botón no hace nada y el
+  // correo sigue a la vista para copiarlo a mano.
+  document.getElementById("copiar").addEventListener("click", async (e) => {
+    try {
+      await navigator.clipboard.writeText("dviidcf@gmail.com");
+      e.target.textContent = t("k.copiado");
+      setTimeout(() => { e.target.textContent = t("k.copiar"); }, 1800);
+    } catch { /* sin permiso de portapapeles */ }
+  });
+</script>
+</body>
+</html>

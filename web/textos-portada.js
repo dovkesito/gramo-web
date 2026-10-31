@@ -2,7 +2,6 @@
 window.GRAMO_TEXTOS = window.GRAMO_TEXTOS || {};
 
 window.GRAMO_TEXTOS.es = {
-  "hero.etiqueta": "6 supermercados · gratis para empezar",
   "hero.titulo": "La compra más barata que <em>cumple tus macros</em>.",
   "hero.sub": "Dinos cuánta proteína y cuántas calorías quieres. Gramo mira miles de productos de seis supermercados y te monta la cesta que las cumple por menos dinero.",
   "hero.descargar": "Descargar la app",
@@ -13,10 +12,9 @@ window.GRAMO_TEXTOS.es = {
   "hero.tf2pie": "y miles de productos",
 
   "func.etiqueta": "Pruébalo aquí mismo",
-  "func.titulo": "Toca, arrastra y juega con Gramo",
+  "func.titulo": "Toca, arrastra y usa Gramo",
   "func.intro": "Estas tres demos funcionan de verdad, con precios reales de ejemplo. La app hace lo mismo con el catálogo entero.",
   "hero.supers": "Supermercados",
-  "func.nota": "Demo con 20 alimentos y precios de ejemplo tomados el {fecha}. El coste es el de lo que comes; en la app ves también el precio de cada paquete.",
 
   "d1.titulo": "Cesta por macros",
   "d1.texto": "Mueve las barras: Gramo busca primero la proteína más barata, completa las calorías y te dice exactamente qué comprar. ¿No te gusta algo? Arrástralo a la papelera y se recalcula.",
@@ -61,7 +59,7 @@ window.GRAMO_TEXTOS.es = {
   "d2.vacio": "Sin productos aquí",
   "d2.falta": "Sin precio de {x}",
   "d2.mas": "Pagas {x} más que comprándolo todo en {s}",
-  "d2.siguiente": "Pulsa para pasarlo al siguiente súper",
+  "d2.siguiente": "Arrástralo a otro súper, o pulsa Intro para pasarlo al siguiente",
   "d2.notiene": "{s} no lo tiene: precio de un sustituto",
 
   "d3.titulo": "Explora y comparte cestas",
@@ -101,7 +99,6 @@ window.GRAMO_TEXTOS.es = {
 };
 
 window.GRAMO_TEXTOS.en = {
-  "hero.etiqueta": "6 supermarkets · free to start",
   "hero.titulo": "The cheapest groceries that <em>hit your macros</em>.",
   "hero.sub": "Tell us how much protein and how many calories you want. Gramo checks thousands of products across six Spanish supermarkets and builds the basket that hits them for less.",
   "hero.descargar": "Download the app",
@@ -112,10 +109,9 @@ window.GRAMO_TEXTOS.en = {
   "hero.tf2pie": "and thousands of products",
 
   "func.etiqueta": "Try it right here",
-  "func.titulo": "Tap, drag and play with Gramo",
+  "func.titulo": "Tap, drag and use Gramo",
   "func.intro": "These three demos really work, with real sample prices. The app does the same with the whole catalogue.",
   "hero.supers": "Supermarkets",
-  "func.nota": "Demo with 20 foods and sample prices taken on {fecha}. Cost is for what you eat; the app also shows each pack's price.",
 
   "d1.titulo": "Macro-based basket",
   "d1.texto": "Move the sliders: Gramo finds the cheapest protein first, fills up the calories and tells you exactly what to buy. Don't like something? Drag it to the bin and it recalculates.",
@@ -160,7 +156,7 @@ window.GRAMO_TEXTOS.en = {
   "d2.vacio": "No products here",
   "d2.falta": "No price for {x}",
   "d2.mas": "You pay {x} more than buying everything at {s}",
-  "d2.siguiente": "Press to move it to the next supermarket",
+  "d2.siguiente": "Drag it to another supermarket, or press Enter to move it to the next one",
   "d2.notiene": "{s} doesn't stock it: substitute price",
 
   "d3.titulo": "Explore and share baskets",

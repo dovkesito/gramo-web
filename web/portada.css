@@ -23,26 +23,25 @@
 .supers li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
 
 .hero-visual { position: relative; min-height: 22rem; display: grid; place-items: center; }
-.hero-icono { width: 180px; height: 180px; border-radius: 42px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); animation: flotar 6s ease-in-out infinite; }
+.hero-icono { width: 180px; height: 180px; border-radius: 42px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); }
 .tarjeta-flotante {
   position: absolute; background: var(--crema); color: var(--tinta); border-radius: 18px; padding: 1rem 1.2rem;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); display: grid; gap: 0.25rem; min-width: 12rem;
-  animation: flotar 7s ease-in-out infinite; z-index: 1;
+  z-index: 1;
 }
 .tarjeta-flotante.t1 { top: 0; left: 0; }
-.tarjeta-flotante.t2 { bottom: 0; right: 0; animation-delay: -3s; }
+.tarjeta-flotante.t2 { bottom: 0; right: 0; }
 .tf-titulo { font-size: 0.8rem; color: var(--tinta-2); font-weight: 600; }
 .tf-precio { font: 800 1.8rem var(--texto); letter-spacing: -0.02em; color: var(--verde); }
 .tf-precio.oro { color: var(--oro-oscuro); }
 .tf-barra { height: 8px; border-radius: 8px; background: rgba(26, 43, 26, 0.08); overflow: hidden; }
 .tf-barra i { display: block; height: 100%; background: var(--ok); border-radius: 8px; }
 .tf-pie { font-size: 0.78rem; color: var(--tinta-2); }
-@keyframes flotar { 50% { transform: translateY(-10px); } }
 /* En móvil no caben flotando: el icono se va y las dos tarjetas van en fila. */
 @media (max-width: 600px) {
   .hero-visual { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
   .hero-icono { display: none; }
-  .tarjeta-flotante { position: static; min-width: 0; padding: 0.8rem 0.9rem; animation: none; }
+  .tarjeta-flotante { position: static; min-width: 0; padding: 0.8rem 0.9rem; }
   .tf-precio { font-size: 1.4rem; }
 }
 
@@ -60,7 +59,6 @@
 .ventajas { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.55rem; }
 .ventajas li { padding-left: 1.7rem; position: relative; }
 .ventajas li::before { content: "✓"; position: absolute; left: 0; color: var(--verde-hondo); background: var(--oro); width: 1.15rem; height: 1.15rem; border-radius: 50%; font-size: 0.75rem; font-weight: 800; display: grid; place-items: center; top: 0.2rem; }
-.nota-datos { font-size: 0.85rem; opacity: 0.7; max-width: 40rem; margin: -2rem auto 0; }
 
 /* ---------- Ventana de demo (el crema de la app) ---------- */
 .demo {

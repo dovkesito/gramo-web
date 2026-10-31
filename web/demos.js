@@ -63,11 +63,16 @@
     const vale = (p) => !quitados.has(p.id) && !(veg && NO_VEG.has(p.id)) && eurKg(p, mercado) != null;
     const coste = (p) => (p.racion / 1000) * eurKg(p, mercado);
     const raciones = new Map();
-    const tot = { kcal: 0, prot: 0, carb: 0, grasa: 0, euros: 0 };
+    // `real`: la proteína que viene de fuentes proteicas (carne, pescado, huevos,
+    // lácteos proteicos, legumbres). Es la que cuenta para el objetivo, como en la
+    // app: si contara la del pan y la pasta, subir las kcal ABARATARÍA la cesta,
+    // porque los hidratos irían sustituyendo a la carne.
+    const tot = { kcal: 0, prot: 0, real: 0, carb: 0, grasa: 0, euros: 0 };
     const meter = (p) => {
       raciones.set(p.id, (raciones.get(p.id) || 0) + 1);
       const f = p.racion / 100;
       tot.kcal += p.kcal * f; tot.prot += p.prot * f; tot.carb += p.carb * f; tot.grasa += p.grasa * f; tot.euros += coste(p);
+      if (p.grupo === "prote" || p.grupo === "legumbre") tot.real += p.prot * f;
     };
     const n = (p) => raciones.get(p.id) || 0;
 
@@ -83,31 +88,31 @@
       return mejor;
     };
 
-    // 1) Primero proteína (hasta el 75 %): el resto lo ponen el pan, la pasta, la leche...
+    // 1) Primero la proteína, de fuentes proteicas y sin mirar cuántas kcal se piden.
     const fuentes = P.filter((p) => ["prote", "legumbre"].includes(p.grupo) && vale(p));
     const masProteina = (hasta) => {
-      for (let vueltas = 0; vueltas < 200 && tot.prot < objetivo.prot * hasta; vueltas++) {
+      for (let vueltas = 0; vueltas < 200 && tot.real < objetivo.prot * hasta; vueltas++) {
         const opciones = fuentes.filter((p) => n(p) < Math.ceil(dias * 2.2) && tot.kcal + p.kcal * p.racion / 100 <= objetivo.kcal * 1.05);
         const p = elegir(opciones, (p) => (p.prot * p.racion / 100) / coste(p) / (1 + 0.7 * n(p)));
         if (!p) break;
         meter(p);
       }
     };
-    // Cuanto menos pesa la proteína en las calorías, menos se adelanta: con 80 g en
-    // 2.400 kcal casi toda sale sola de los hidratos.
-    const pesoProteina = (prot * 4) / kcal;
-    masProteina(Math.min(0.75, Math.max(0, (pesoProteina - 0.1) / 0.15)));
+    masProteina(0.85);
 
     // 2) Calorías, empujando hacia el macro que más falta (hidratos o grasa).
     const energia = P.filter((p) => ["base", "grasa", "lacteo", "legumbre", "fruta"].includes(p.grupo) && vale(p));
     for (let vueltas = 0; vueltas < 300 && tot.kcal < objetivo.kcal * 0.98; vueltas++) {
       const faltaGrasa = Math.max(0, 1 - tot.grasa / objetivo.grasa);
       const faltaCarb = Math.max(0, 1 - tot.carb / objetivo.carb);
-      const opciones = energia.filter((p) => {
+      const caben = energia.filter((p) => {
         const tope = p.grupo === "grasa" ? dias * 4 : p.grupo === "fruta" ? dias * 2 : dias * 3;
-        return n(p) < tope && tot.prot + p.prot * p.racion / 100 <= objetivo.prot * 1.11
-          && tot.kcal + p.kcal * p.racion / 100 <= objetivo.kcal * 1.06;
+        return n(p) < tope && tot.kcal + p.kcal * p.racion / 100 <= objetivo.kcal * 1.06;
       });
+      // Mejor lo que no dispara la proteína; si ya no queda nada así, se acepta
+      // pasarse (la barra lo enseñará en ámbar) antes que dejar la cesta corta de kcal.
+      const sinPasarse = caben.filter((p) => tot.prot + p.prot * p.racion / 100 <= objetivo.prot * 1.11);
+      const opciones = sinPasarse.length ? sinPasarse : caben;
       const p = elegir(opciones, (p) => {
         const k = p.kcal * p.racion / 100;
         const deGrasa = (p.grasa * 9) / Math.max(1, p.kcal);
@@ -118,7 +123,7 @@
       meter(p);
     }
 
-    // 3) Repaso de proteína por si los hidratos no llegaron.
+    // 3) Repaso de proteína por si con los hidratos no se llegó.
     masProteina(0.97);
 
     const lineas = [...raciones].map(([id, r]) => {
@@ -175,7 +180,7 @@
       if (!arrastre || arrastre.el !== el) return;
       const { activo, destino } = arrastre;
       cancelar();
-      if (activo) { el.dataset.recienArrastrado = "1"; setTimeout(() => delete el.dataset.recienArrastrado, 50); alSoltar(destino); }
+      if (activo) alSoltar(destino);
     };
     el.addEventListener("pointerup", soltar);
     el.addEventListener("pointercancel", cancelar);
@@ -250,8 +255,10 @@
     recalcular();
   });
 
-  function colorMeta(valor, meta) {
-    const d = Math.abs(valor / meta - 1);
+  // Como en la app: las kcal son un objetivo (±12 %) y la proteína un SUELO.
+  // Pasarse de proteína no es fallar; quedarse corto, sí.
+  function colorMeta(valor, meta, esSuelo) {
+    const d = esSuelo ? Math.max(0, 1 - valor / meta) : Math.abs(valor / meta - 1);
     return d <= 0.12 ? "var(--ok)" : d <= 0.25 ? "var(--aviso)" : "var(--mal)";
   }
 
@@ -271,7 +278,7 @@
       // se enseñan de referencia: con 20 alimentos la demo no los puede afinar.
       const conMeta = c === "kcal" || c === "prot";
       const pct = Math.min(100, (tot[c] / objetivo[c]) * 100);
-      const color = conMeta ? colorMeta(tot[c], objetivo[c]) : "var(--tinta-3)";
+      const color = conMeta ? colorMeta(tot[c], objetivo[c], c === "prot") : "var(--tinta-3)";
       return `<div class="macro${conMeta ? "" : " info"}"><div><span>${t("macro." + k)}</span><b>${num(tot[c] / dias)}${u || " kcal"}</b></div>
         <div class="barra"><i style="width:${pct}%;background:${color}"></i></div></div>`;
     }).join("");
@@ -385,15 +392,14 @@
       const mover = (m) => { estado.asignacion.set(f.dataset.id, m); pintarComparar(); };
       const linea = cesta.lineas.find((l) => l.id === f.dataset.id);
       arrastrable(f, { destinos: ".fila-super", alSoltar: (d) => { if (d && tienePrecio(linea, d.dataset.m)) mover(d.dataset.m); } });
-      // Sin arrastrar (teclado o un toque): pasa al siguiente súper.
+      // Con el ratón o el dedo, solo arrastrando (un clic suelto movía fichas sin
+      // querer). Desde el teclado, Intro o Espacio la pasan al siguiente súper.
       const siguiente = () => {
-        if (f.dataset.recienArrastrado) return;
         const actual = f.closest(".fila-super").dataset.m;
         const i = orden.indexOf(actual);
         const sig = [...orden.slice(i + 1), ...orden.slice(0, i)].find((m) => tienePrecio(linea, m));
         if (sig) mover(sig);
       };
-      f.addEventListener("click", siguiente);
       f.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); siguiente(); } });
     });
   }
@@ -467,8 +473,6 @@
     const mezcla = base.lineas.reduce((acc, l) => acc + precioEn(l, mejorSuperDe(l, false, new Set()), false, new Set()).euros, 0);
     $("hero-precio").textContent = fmt(mezcla);
     $("hero-prot").textContent = tx("hero.tf1pie", { p: num(base.tot.prot), o: num(150 * 7) });
-    const fecha = new Date(datos.fecha + "T12:00:00").toLocaleDateString(gramoIdioma === "es" ? "es-ES" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
-    $("nota-datos").textContent = tx("func.nota", { fecha });
   }
 
   function recalcular() {
