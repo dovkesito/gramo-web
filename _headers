@@ -4,3 +4,7 @@
   Content-Type: application/json
 /.well-known/assetlinks.json
   Content-Type: application/json
+
+# Los paquetes de la app llevan el hash en el nombre: no cambian nunca.
+/app/_expo/*
+  Cache-Control: public, max-age=31536000, immutable

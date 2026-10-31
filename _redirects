@@ -1,0 +1,4 @@
+# Gramo para web (gramo.dev/app) es una SPA: cualquier ruta de dentro
+# (/app/cesta, /app/compartida/<id>…) la resuelve su propio index.html.
+# Los ficheros que existen (los .js de /app/_expo) se sirven antes que esto.
+/app/*  /app/index.html  200
